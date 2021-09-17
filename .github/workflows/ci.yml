@@ -9,3 +9,4 @@ jobs:
       - uses: actions/setup-node@v2
       - run: yarn --frozen-lockfile
       - run: yarn build
+      - run: yarn test
