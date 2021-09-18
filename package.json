@@ -7,7 +7,9 @@
     "android": "expo start --android",
     "build": "tsc",
     "eject": "expo eject",
+    "format": "prettier --write .",
     "ios": "expo start --ios",
+    "lint": "eslint .",
     "start": "expo start",
     "test": "jest",
     "web": "expo start --web"
@@ -22,9 +24,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@react-native-community/eslint-config": "^3.0.1",
     "@types/react": "^17.0.21",
     "@types/react-native": "^0.65.0",
+    "eslint": "^7.32.0",
     "jest-expo": "~42.0.1",
+    "prettier": "^2.4.1",
     "react-test-renderer": "16.13.1",
     "typescript": "^4.4.3"
   },
