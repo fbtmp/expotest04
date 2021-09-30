@@ -1,7 +1,24 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import prettyFormat from 'pretty-format';
 
 import App from '../App';
+
+expect.addSnapshotSerializer({
+  serialize(val, config, indentation, depth, refs, printer) {
+    const serializer = prettyFormat.plugins.ReactElement;
+    val.children.splice(0, 1);
+    return serializer.serialize(val, config, indentation, depth, refs, printer);
+  },
+  test(val) {
+    return (
+      val &&
+      val.type === 'Text' &&
+      val.children?.length === 1 &&
+      !val.children[0].trim().length
+    );
+  },
+});
 
 describe('<App />', () => {
   it('has 2 children', () => {

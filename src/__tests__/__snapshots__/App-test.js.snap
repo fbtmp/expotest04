@@ -53,9 +53,7 @@ exports[`<App /> renders correctly 1`] = `
                   "marginBottom": 8,
                 }
               }
-            >
-              
-            </Text>
+            />
           </View>
         </RCTScrollView>
         <View
