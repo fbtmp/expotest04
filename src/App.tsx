@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import Constants from 'expo-constants';
 
+import * as pkg from '../package.json';
+
 export default function App() {
   const [modalText, setModalText] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
@@ -40,6 +42,11 @@ export default function App() {
           </View>
         </View>
       </Modal>
+      <View>
+        <Text style={styles.boldText}>
+          {pkg.name}@{pkg.version}
+        </Text>
+      </View>
       <View>
         <Pressable
           style={[styles.button]}
@@ -73,6 +80,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  boldText: {
+    color: 'black',
+    fontWeight: 'bold',
+    margin: 8,
+    textAlign: 'center',
   },
   centeredView: {
     flex: 1,

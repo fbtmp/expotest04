@@ -96,6 +96,22 @@ exports[`<App /> renders correctly 1`] = `
     </View>
   </Modal>
   <View>
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontWeight": "bold",
+          "margin": 8,
+          "textAlign": "center",
+        }
+      }
+    >
+      expotest04
+      @
+      0.1.0
+    </Text>
+  </View>
+  <View>
     <View
       accessible={true}
       focusable={true}
