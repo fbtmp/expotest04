@@ -29,18 +29,20 @@ export default function App() {
         onRequestClose={() => {
           setModalVisible(!modalVisible);
         }}>
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <ScrollView>
-              <Text style={styles.modalText}>{modalText}</Text>
-            </ScrollView>
-            <Pressable
-              style={[styles.button]}
-              onPress={() => setModalVisible(!modalVisible)}>
-              <Text style={styles.textStyle}>Close</Text>
-            </Pressable>
+        {modalVisible && (
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <ScrollView>
+                <Text style={styles.modalText}>{modalText}</Text>
+              </ScrollView>
+              <Pressable
+                style={[styles.button]}
+                onPress={() => setModalVisible(!modalVisible)}>
+                <Text style={styles.textStyle}>Close</Text>
+              </Pressable>
+            </View>
           </View>
-        </View>
+        )}
       </Modal>
       <View>
         <Text style={styles.boldText}>
