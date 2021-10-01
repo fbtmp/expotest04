@@ -1,0 +1,16 @@
+name: publish
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - uses: expo/expo-github-action@v6
+        with:
+          expo-version: 4.x
+          token: ${{secrets.EXPO_TOKEN}}
+      - run: yarn --frozen-lockfile
+      - run: expo publish
