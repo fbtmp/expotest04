@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import Constants from 'expo-constants';
+import * as Updates from 'expo-updates';
 
 import * as pkg from '../package.json';
 
@@ -50,24 +51,24 @@ export default function App() {
         </Text>
       </View>
       <View>
+        <Text>{Constants.nativeAppVersion}</Text>
+        <Text>{Constants.nativeBuildVersion}</Text>
+      </View>
+      <View>
         <Pressable
           style={[styles.button]}
           onPress={() => showModal(JSON.stringify(process.env, null, 2))}>
-          <Text style={styles.textStyle}>Show env</Text>
+          <Text style={styles.textStyle}>Show process.env</Text>
         </Pressable>
         <Pressable
           style={[styles.button]}
-          onPress={() =>
-            showModal(JSON.stringify(Constants.manifest, null, 2))
-          }>
-          <Text style={styles.textStyle}>Show manifest</Text>
+          onPress={() => showModal(JSON.stringify(Constants, null, 2))}>
+          <Text style={styles.textStyle}>Show Constants</Text>
         </Pressable>
         <Pressable
           style={[styles.button]}
-          onPress={() =>
-            showModal(JSON.stringify(Constants.manifest?.extra, null, 2))
-          }>
-          <Text style={styles.textStyle}>Show manifest.extra</Text>
+          onPress={() => showModal(JSON.stringify(Updates, null, 2))}>
+          <Text style={styles.textStyle}>Show Updates</Text>
         </Pressable>
       </View>
 
@@ -111,6 +112,7 @@ const styles = StyleSheet.create({
   button: {
     borderRadius: 4,
     padding: 10,
+    minWidth: 180,
     margin: 4,
     elevation: 2,
     backgroundColor: '#2196F3',

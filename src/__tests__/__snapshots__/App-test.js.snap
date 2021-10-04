@@ -34,6 +34,14 @@ exports[`<App /> renders correctly 1`] = `
     </Text>
   </View>
   <View>
+    <Text>
+      mock
+    </Text>
+    <Text>
+      mock
+    </Text>
+  </View>
+  <View>
     <View
       accessible={true}
       focusable={true}
@@ -53,6 +61,7 @@ exports[`<App /> renders correctly 1`] = `
             "borderRadius": 4,
             "elevation": 2,
             "margin": 4,
+            "minWidth": 180,
             "padding": 10,
           },
         ]
@@ -67,7 +76,7 @@ exports[`<App /> renders correctly 1`] = `
           }
         }
       >
-        Show env
+        Show process.env
       </Text>
     </View>
     <View
@@ -89,6 +98,7 @@ exports[`<App /> renders correctly 1`] = `
             "borderRadius": 4,
             "elevation": 2,
             "margin": 4,
+            "minWidth": 180,
             "padding": 10,
           },
         ]
@@ -103,7 +113,7 @@ exports[`<App /> renders correctly 1`] = `
           }
         }
       >
-        Show manifest
+        Show Constants
       </Text>
     </View>
     <View
@@ -125,6 +135,7 @@ exports[`<App /> renders correctly 1`] = `
             "borderRadius": 4,
             "elevation": 2,
             "margin": 4,
+            "minWidth": 180,
             "padding": 10,
           },
         ]
@@ -139,7 +150,7 @@ exports[`<App /> renders correctly 1`] = `
           }
         }
       >
-        Show manifest.extra
+        Show Updates
       </Text>
     </View>
   </View>
