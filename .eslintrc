@@ -1,4 +1,4 @@
 {
   "extends": "@react-native-community",
-  "ignorePatterns": ["coverage/"]
+  "ignorePatterns": ["coverage/", "web-build/"]
 }
