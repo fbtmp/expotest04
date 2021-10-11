@@ -21,9 +21,9 @@ expect.addSnapshotSerializer({
 });
 
 describe('<App />', () => {
-  it('has 4 children', () => {
+  it('has 7 children', () => {
     const tree = renderer.create(<App />).toJSON();
-    expect(tree.children.length).toBe(4);
+    expect(tree.children.length).toBe(7);
   });
   it('renders correctly', () => {
     const tree = renderer.create(<App />).toJSON();
