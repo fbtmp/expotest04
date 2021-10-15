@@ -11,9 +11,11 @@ import {
 } from 'react-native';
 import Constants from 'expo-constants';
 import * as Notifications from 'expo-notifications';
+import * as Linking from 'expo-linking';
 import * as Updates from 'expo-updates';
 
 import * as pkg from '../package.json';
+import Anchor from './components/Anchor';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -31,8 +33,14 @@ export default function App() {
   const notificationListener = useRef();
   const responseListener = useRef();
 
+  const _handleRedirect = (event) => {
+    console.log('Linking event received', event);
+  };
+
   useEffect(() => {
     registerForPushNotificationsAsync().then(token => setExpoPushToken(token));
+
+    Linking.addEventListener('url', _handleRedirect);
 
     notificationListener.current =
       Notifications.addNotificationReceivedListener(event => {
@@ -44,11 +52,17 @@ export default function App() {
         console.log(response);
       });
 
+    Linking.getInitialURL().then(url => {
+      console.log('getInitialURL', url);
+    });
+
     return () => {
       Notifications.removeNotificationSubscription(
         notificationListener.current,
       );
       Notifications.removeNotificationSubscription(responseListener.current);
+
+      Linking.removeEventListener('url', _handleRedirect);
     };
   }, []);
 
@@ -119,6 +133,15 @@ export default function App() {
         onPress={() => schedulePushNotification()}>
         <Text style={styles.textStyle}>Schedule Notification</Text>
       </Pressable>
+      <Pressable
+        style={[styles.button]}
+        onPress={() => Linking.openURL('https://expo.dev')}>
+        <Text style={styles.textStyle}>Open Link</Text>
+      </Pressable>
+      <Anchor href="https://google.com">Go to google.com</Anchor>
+      <Text>
+        {Linking.createURL('path/test', {queryParams: {key: 'value'}})}
+      </Text>
 
       <StatusBar style="auto" />
     </View>
