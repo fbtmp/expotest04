@@ -154,5 +154,60 @@ exports[`<App /> renders correctly 1`] = `
       </Text>
     </View>
   </View>
+  <Text>
+    Push token:
+    -
+  </Text>
+  <View>
+    <Text>
+      Title:
+      -
+    </Text>
+    <Text>
+      Body:
+      -
+    </Text>
+    <Text>
+      Data:
+      ""
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#2196F3",
+          "borderRadius": 4,
+          "elevation": 2,
+          "margin": 4,
+          "minWidth": 180,
+          "padding": 10,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontWeight": "bold",
+          "textAlign": "center",
+        }
+      }
+    >
+      Schedule Notification
+    </Text>
+  </View>
 </View>
 `;
